@@ -1,0 +1,242 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Leaflet Map Styles */
+#map,
+.leaflet-map-container {
+  position: relative;
+  background-color: #f5f5f5;
+}
+
+#map .leaflet-container,
+.leaflet-map-container .leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  z-index: 0;
+}
+
+/* Ensure map container has height */
+#map {
+  min-height: 400px;
+}
+
+/* VoyageEdu Design System - Educational Institution Discovery Platform */
+
+@layer base {
+  :root {
+    /* Core background and text */
+    --background: 0 0% 100%;
+    --foreground: 237 23% 11%;
+
+    /* Card and surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 237 23% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 237 23% 11%;
+
+    /* Primary brand colors - Vibrant Navy Blue (#19183B) */
+    --primary: 237 79% 20%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 237 65% 35%;
+    --primary-dark: 237 85% 15%;
+
+    /* Secondary colors - Medium Blue-Gray */
+    --secondary: 210 25% 65%;
+    --secondary-foreground: 237 79% 20%;
+
+    /* Accent colors - Vibrant Orange */
+    --accent: 25 95% 55%;
+    --accent-foreground: 0 0% 100%;
+    --accent-light: 25 85% 65%;
+    
+    /* Orange variants for CTAs and highlights */
+    --orange: 25 95% 55%;
+    --orange-light: 25 85% 65%;
+    --orange-dark: 25 95% 45%;
+
+    /* Muted colors for subtle elements */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    /* Success and warning colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Border and input styling */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 237 23% 11%;
+
+    /* Vibrant gradients for modern appeal */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--orange)) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)) 0%, hsl(var(--orange)/0.05) 100%);
+    --gradient-subtle: linear-gradient(to bottom, hsl(var(--background)), hsl(var(--orange)/0.03));
+    --gradient-orange: linear-gradient(135deg, hsl(var(--orange)) 0%, hsl(var(--orange-light)) 100%);
+
+    /* Shadows for depth */
+    --shadow-sm: 0 2px 4px hsl(var(--primary) / 0.1);
+    --shadow-md: 0 4px 12px hsl(var(--primary) / 0.15);
+    --shadow-lg: 0 8px 32px hsl(var(--primary) / 0.2);
+    --shadow-hover: 0 12px 40px hsl(var(--primary) / 0.25);
+
+    /* Border radius system */
+    --radius: 0.75rem;
+    --radius-sm: 0.5rem;
+    --radius-lg: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 237 79% 20%;
+    --foreground: 210 40% 98%;
+
+    --card: 237 65% 25%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 237 65% 25%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 165 35% 55%;
+    --primary-foreground: 237 79% 20%;
+
+    --secondary: 210 20% 25%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 20% 25%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 25 85% 60%;
+    --accent-foreground: 237 23% 11%;
+    
+    /* Orange variants for dark mode */
+    --orange: 25 85% 60%;
+    --orange-light: 25 75% 70%;
+    --orange-dark: 25 95% 50%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 210 20% 25%;
+    --input: 210 20% 25%;
+    --ring: 165 15% 65%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Utility classes for VoyageEdu */
+@layer components {
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    background: hsl(var(--card) / 0.85);
+    border: 1px solid hsl(var(--border) / 0.5);
+  }
+  
+  .institution-card {
+    @apply p-6 rounded-lg border transition-all duration-300;
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .institution-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+  }
+  
+  .search-glow {
+    box-shadow: 0 0 0 1px hsl(var(--ring) / 0.3), 0 0 20px hsl(var(--primary) / 0.1);
+  }
+  
+  .map-marker {
+    @apply w-6 h-6 rounded-full border-2 border-white cursor-pointer transition-transform duration-200;
+    background: var(--gradient-primary);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .map-marker:hover {
+    transform: scale(1.2);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* Keyframe animations */
+@layer base {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+    }
+  }
+  
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+}
