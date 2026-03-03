@@ -9,7 +9,7 @@ const supportRoutes = require('./routes/supportRoutes');
 const authRoutes = require('./routes/authRoutes');
 
 // MongoDB connection string (from geocodeAndMigrate.js)
-const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://ramanvhantale_db_user:CK045D4mXeZYkKHA@cluster0.vyhwfbq.mongodb.net/?appName=Cluster0';
+const MONGO_URI = process.env.MONGO_URI;
 
 const app = express();
 const PORT = process.env.PORT || 3001;
